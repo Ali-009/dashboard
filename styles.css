@@ -11,32 +11,83 @@ html, body{
     box-sizing: border-box;
     overflow: auto;
 
+    /*Definig the font for the entire page*/
+    font-family: 'Roboto', sans-serif;
+
     /*The page-wrapper is a grid container*/
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    /*The smallest part both horizontally and vertically occupies 20%.*/
+    /*Working around the below ratio for the entire project should add to the visual appeal of the page*/
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
 }
 
 /*Below are the grid-items of .page-wrapper*/
+/*Each of those grid items will be a grid of its own*/
 .header{
     grid-column: 2;
     grid-row: 1;
-
     background-color: white;
 }
 
 .main-content{
     grid-column: 2;
-    grid-row: 2;
-
+    grid-row: 2 / 4;
     background-color: #CBD5E1;
 }
 
 .sidebar{
     grid-column: 1;
-    grid-row: 1 / 3;
-
+    grid-row: 1 / 4;
     background-color: #FB7185;
+
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 32px;
+    justify-content: start;
 }
 
+/*Below are nested grids for the sidebar*/
+.sidebar .title{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: start;
+    justify-content: start;
+    align-content: center;
+    gap: 16px;
+
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 16px;
+}
+
+/*sidebar-options are divided into basic and advanced options boht of which are grid containers*/
+.basic-sidebar-options{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, max-content);
+    gap: 8px;
+}
+
+.advanced-sidebar-options{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, max-content);
+    gap: 8px;
+}
+
+.sidebar-option{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    column-gap: 16px;
+    font-weight: 500;
+}
+
+.sidebar-option img{
+    justify-self: end;
+
+}
 
