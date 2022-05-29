@@ -1,0 +1,42 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.page-wrapper{
+    /*The page-wrapper occupies at least the entire page*/
+    width: 100vw;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+
+    /*The page-wrapper is a grid container*/
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+/*Below are the grid-items of .page-wrapper*/
+.header{
+    grid-column: 2;
+    grid-row: 1;
+
+    background-color: white;
+}
+
+.main-content{
+    grid-column: 2;
+    grid-row: 2;
+
+    background-color: #CBD5E1;
+}
+
+.sidebar{
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    background-color: #FB7185;
+}
+
+
