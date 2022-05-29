@@ -18,8 +18,8 @@ html, body{
     display: grid;
     /*The smallest part both horizontally and vertically occupies 20%.*/
     /*Working around the below ratio for the entire project should add to the visual appeal of the page*/
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr max-content 4fr;
 }
 
 /*Below are the grid-items of .page-wrapper*/
@@ -43,7 +43,7 @@ html, body{
 
     display: grid;
     grid-template-columns: max-content;
-    grid-template-rows: repeat(3, max-content);
+    grid-template-rows: subgrid;
     row-gap: 32px;
     justify-content: start;
 }
@@ -66,6 +66,7 @@ html, body{
 /*sidebar-options are divided into basic and advanced options boht of which are grid containers*/
 .basic-sidebar-options{
     display: grid;
+    height: max-content;
     grid-template-columns: auto;
     grid-template-rows: repeat(6, max-content);
     gap: 8px;
