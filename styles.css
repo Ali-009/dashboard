@@ -20,7 +20,7 @@ html, body{
     /*The smallest part both horizontally and vertically occupies 20%.*/
     /*Working around the below ratio for the entire project should add to the visual appeal of the page*/
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr max-content 4fr;
+    grid-template-rows: 1fr max-content 1fr;
 }
 
 /*Below are the grid-items of .page-wrapper*/
