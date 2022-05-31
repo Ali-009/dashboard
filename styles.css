@@ -115,6 +115,10 @@ html, body{
     border-radius: 18px;
     background-color: lightskyblue;
 }
+
+.content-buttons>button:hover{
+    cursor: pointer;
+}
 /*adjusting both profile images*/
 .header-upper img[alt="Profile Picture"]{
     max-height: 50px;
@@ -133,7 +137,7 @@ html, body{
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
 }
 
 /*Defining fonts for descriptive text*/
@@ -201,7 +205,7 @@ html, body{
 
 .announcement-container{
     grid-column: 2;
-    grid: 1;
+    grid-row: 1;
 
     margin-right: 16px;
 }
@@ -227,7 +231,53 @@ html, body{
     padding-bottom: 12px;
 }
 
-.trending{
+.trending-container{
+    grid-column: 2;
+    grid-row: 2;
+
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.trending-container .profile-picture{
+    height: 70px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.trending-list{
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+    gap: 16px;
+}
+
+.trending-item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, min-content);
+
+    column-gap: 16px;
+}
+
+.trending-item img{
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.trending-tag{
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: end;
+    margin-bottom: 2px;
+}
+
+.trending-item .description{
     grid-column: 2;
     grid-row: 2;
 }
@@ -235,7 +285,7 @@ html, body{
 .sidebar{
     grid-column: 1;
     grid-row: 1 / 3;
-    background-color: #FB7185;
+    background-color: #f2e3d3;
 
     display: grid;
     grid-template-columns: max-content;
